@@ -3,7 +3,7 @@
 from karmatrust import KarmaTrustBot
 
 
-TELEGRAM_BOT_TOKEN = '655671768:AAGTZRfUh0oLzU9jL83amJSrke0CE8hUPTA'
+TELEGRAM_BOT_TOKEN = ''
 
 bot = KarmaTrustBot(TELEGRAM_BOT_TOKEN)
 

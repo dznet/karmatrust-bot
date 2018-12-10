@@ -117,15 +117,14 @@ class KarmaTrustBot():
   def about(self, bot, update):
     update.message.reply_text(
                         self.message.about(),
-                        parse_mode='Markdown',
-                        reply_markup=self.message.keyboard()
+                        parse_mode='Markdown'
                     )
 
   def market(self, bot, update):
-    bot.send_message(chat_id=update.message.from_user.id,
-                     text=self.request_data(),
-                     parse_mode='Markdown',
-                     reply_markup=self.message.keyboard()
+    update.message.reply_text(
+                        text=self.request_data(),
+                        parse_mode='Markdown',
+                        reply_markup=self.message.keyboard()
                     )
 
   def hit_link(self, bot, update):
@@ -147,7 +146,7 @@ class KarmaTrustBot():
       offer = loads(data['node']['offer']['data'])
 
       message.append(
-                '*{companyName}*\nСумма: {maxValue} ₽'.format(
+                '*{companyName}*\nСумма: {maxValue} руб.'.format(
                                                            **application
                                                          )
               )
@@ -174,11 +173,11 @@ class Messages():
 что экономика – это люди, а не банки и системы.
 \nПрисоединяйтесь: my.karma.red
 \nВся самая актуальная информация для инвесторов в специальном \
-(Telegram-чате)[https://t.me/karmainvest]'''
+[Telegram-чате](https://t.me/karmainvest)'''
 
   __help = '''[Ответы на частые вопросы](https://karmatrust.ru/#faq)
-\n\nНаш e-mail: help@karma.red\nТелефон: +7 495 134 24 70
-\n\n[Telegram-чат для инвесторов](https://t.me/karmainvest)'''
+\nНаш e-mail: help@karma.red\nТелефон: +7 495 134 24 70
+\n[Telegram-чат для инвесторов](https://t.me/karmainvest)'''
 
   def __init__(self):
     super().__init__()
@@ -224,3 +223,4 @@ class Messages():
     return InlineKeyboardMarkup([[button]])
 
 # dzNetwork 2018
+
